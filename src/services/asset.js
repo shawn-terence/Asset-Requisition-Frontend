@@ -9,7 +9,7 @@ export const assetService={
         try {
             const token=localStorage.getItem('token')
             const response = await axios.post(
-                "http://127.0.0.1:8000/assets/add", // Base URL + endpoint
+                "https://asset-requisition-backend.onrender.com/assets/add", // Base URL + endpoint
                 formData,
                 {
                     headers: {
@@ -86,7 +86,7 @@ export const assetService={
             try {
                 const token = localStorage.getItem('token');
                 const response = await axios.patch(
-                    `http://127.0.0.1:8000/assets/${id}/update/`, // Base URL + dynamic asset ID
+                    `https://asset-requisition-backend.onrender.com/assets/${id}/update/`, // Base URL + dynamic asset ID
                     formData,
                     {
                         headers: {

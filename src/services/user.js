@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // Base API URL
-export const API_BASE_URL = "http://127.0.0.1:8000/";
+export const API_BASE_URL = "https://asset-requisition-backend.onrender.com/";
 
 // Create Axios instance
 export const axiosInstance = axios.create({
