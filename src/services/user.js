@@ -38,7 +38,7 @@ export const userService = {
   // User Login (bypassing axiosInstance)
   userLogin: async (data) => {
     try {
-      const response = await axios.post(`${API_BASE_URL}user/login`, data, {
+      const response = await axios.post(`https://asset-requisition-backend.onrender.com/user/login`, data, {
         headers: { "Content-Type": "application/json" },
       });
   
