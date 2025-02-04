@@ -22,6 +22,7 @@
           </button>
 
           <v-progress-linear v-if="loading" color="orange-darken-2" indeterminate class="mt-3"></v-progress-linear>
+          <p v-if="statusMessage" class="status-message">{{ statusMessage }}</p>
 
           <div class="info-container">
             <div class="info-box">
@@ -35,8 +36,6 @@
               <p><b>Password:</b> password123</p>
             </div>
           </div>
-
-          <p v-if="statusMessage" class="status-message">{{ statusMessage }}</p>
           <p v-if="error" class="error-message">{{ error }}</p>
         </form>
       </div>
@@ -71,6 +70,31 @@ const handleLogin = async () => {
     "Authenticating...",
     "Accessing database...",
     "Validating credentials...",
+    "Initiating handshake protocol...",
+    // "Encrypting payload with AES-256...",
+    // "Synchronizing distributed data layers...",
+    // "Optimizing response cache...",
+    // "Verifying OAuth 2.0 tokens...",
+    // "Compiling GraphQL query AST...",
+    // "Routing through edge CDN nodes...",
+    // "Allocating cloud compute resources...",
+    // "Performing CRON job validation...",
+    // "Finalizing TLS 1.3 negotiation...",
+    // "Generating JWT session keys...",
+    // "Deploying serverless functions...",
+    // "Balancing API gateway load...",
+    // "Parsing X.509 certificates...",
+    "Upstreaming WebSocket packets...",
+    "Conducting CSP policy audit...",
+    "Resolving DNS-over-HTTPS...",
+    "Compressing asset bundles...",
+    "Mounting EBS volumes...",
+    "Activating hot-reload watchers...",
+    "Triangulating geolocation data...",
+    "Validating CORS preflight...",
+    "Brewing fresh machine learning models...", // 😉
+    "Initializing blockchain nonce...",
+    "Orchestrating Kubernetes pods...",
     "Establishing secure session...",
   ];
 
