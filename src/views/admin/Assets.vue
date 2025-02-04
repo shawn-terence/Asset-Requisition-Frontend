@@ -244,12 +244,15 @@
         <v-window-item value="available-assets">
           <div class="search-cont">
             <div  class="search-filter" v-if="tab === 'all-assets' || tab === 'available-assets'">
-            <input
+            <div>
+              <input
               type="text"
               v-model="searchQuery"
               placeholder="Search by name..."
               class="search-input"
-            />
+              />
+            </div>
+
             <div class="categories">
               <div v-for="category in uniqueCategories" :key="category">
               <label>
@@ -512,8 +515,7 @@ onMounted(() => {
 .search-cont{
   display: flex;
   justify-content: center;
-  width: 90%;
-  padding-left: 10px;
+  width: 100%;
 }
 .search-filter {
   display: flex;
@@ -522,6 +524,7 @@ onMounted(() => {
   gap: 1rem;
   margin-top: 1rem;
   padding: 5px;
+
 }
 .asset-dialog{
   max-width: 600px;
@@ -538,16 +541,22 @@ onMounted(() => {
   padding: 0;
 }
 
-.search-input,
-.category-select {
+/* .search-input{
   flex: 1;
   padding: 0.8rem;
   border: 1px solid #ddd;
   border-radius: 15px;
   font-size: 1rem;
-  min-width: 300px;
+  margin-left: 5px;
+  margin-right: 5px;
+} */
+.search-input{
+  border:1px solid #ddd;
+  border-radius: 15px;
+  height: 50px;
+  min-width: 200px;
+  padding: 5px;
 }
-
 .search-input:focus {
   outline-color: #93d4fa83;
 }
@@ -572,7 +581,9 @@ onMounted(() => {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 20px;
-  padding: 20px 0;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
 }
 
 .asset-card {
@@ -588,6 +599,7 @@ onMounted(() => {
   flex-direction: column;
   align-items: center;
   gap: 10px;
+  margin: 5px;
 }
 
 .card-header {
@@ -805,5 +817,19 @@ onMounted(() => {
     gap: 5px;
   }
   
+}
+@media screen and (max-width: 600px) {
+  .asset-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+  .search-input {
+    min-width: 200px;
+  }
+  .card-footer {
+    flex-direction: column;
+  }
+  .card-footer button {
+    width: 100%;
+  }
 }
 </style>
