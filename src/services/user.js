@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // Base API URL
-export const API_BASE_URL = "https://asset-requisition-backend.onrender.com/";
+export const API_BASE_URL = "http://127.0.0.1:8000/";
 
 // Create Axios instance
 export const axiosInstance = axios.create({
@@ -38,7 +38,7 @@ export const userService = {
   // User Login (bypassing axiosInstance)
   userLogin: async (data) => {
     try {
-      const response = await axios.post(`https://asset-requisition-backend.onrender.com/user/login`, data, {
+      const response = await axios.post(`${API_BASE_URL}user/login`, data, {
         headers: { "Content-Type": "application/json" },
       });
   
