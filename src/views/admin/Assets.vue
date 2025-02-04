@@ -513,7 +513,7 @@ onMounted(() => {
   display: flex;
   justify-content: center;
   width: 90%;
-  padding-left: 5px;
+  padding-left: 10px;
 }
 .search-filter {
   display: flex;
@@ -521,6 +521,7 @@ onMounted(() => {
   align-items: center;
   gap: 1rem;
   margin-top: 1rem;
+  padding: 5px;
 }
 .asset-dialog{
   max-width: 600px;
