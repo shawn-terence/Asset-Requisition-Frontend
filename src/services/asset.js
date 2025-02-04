@@ -85,7 +85,7 @@ export const assetService={
             try {
                 const token = localStorage.getItem('token');
                 const response = await axios.patch(
-                    `${API_BASE_URL}/assets/${id}/update/`, 
+                    `${API_BASE_URL}assets/${id}/update/`, 
                     formData,
                     {
                         headers: {
