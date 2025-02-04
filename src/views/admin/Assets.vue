@@ -555,6 +555,7 @@ onMounted(() => {
   border-radius: 15px;
   height: 50px;
   min-width: 200px;
+  width: 60%;
   padding: 5px;
 }
 .search-input:focus {
