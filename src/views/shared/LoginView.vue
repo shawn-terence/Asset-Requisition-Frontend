@@ -104,7 +104,7 @@ const handleLogin = async () => {
       statusMessage.value = statusSteps[stepIndex];
       stepIndex++;
     }
-  }, 2000);
+  }, 3000);
 
   try {
     const response = await userService.userLogin({

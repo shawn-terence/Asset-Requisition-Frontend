@@ -820,7 +820,7 @@ onMounted(() => {
 }
 @media screen and (max-width: 600px) {
   .asset-grid {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   }
   .search-input {
     min-width: 200px;

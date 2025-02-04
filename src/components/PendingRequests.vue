@@ -204,4 +204,19 @@ const showSnackbar = (message, color) => {
 .filter-chips .v-chip {
   cursor: pointer;
 }
+@media screen and (max-width: 600px) {
+  .controls {
+    flex-direction: column;
+    align-items: center;
+  }
+  .search-input {
+    min-width: 250px;
+  }
+  .filter-chips {
+    flex-wrap: wrap;
+  }
+  .action-btn {
+    width: 90%;
+  }
+}
 </style>
