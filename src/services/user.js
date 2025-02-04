@@ -38,7 +38,7 @@ export const userService = {
   // User Login (bypassing axiosInstance)
   userLogin: async (data) => {
     try {
-      const response = await axios.post(`${API_BASE_URL}user/login`, data, {
+      const response = await axios.post(`http://127.0.0.1:8000/user/login`, data, {
         headers: { "Content-Type": "application/json" },
       });
   
