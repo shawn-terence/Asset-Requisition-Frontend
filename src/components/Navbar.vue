@@ -87,11 +87,17 @@ const isAdmin = computed(() => {
 });
 
 const logout = async () => {
+  const timeout = setTimeout(() => {
+    router.push({ name: 'Login' });
+  }, 4000);
+
   try {
     await userService.userLogout();
+    clearTimeout(timeout);
     router.push({ name: 'Login' });
   } catch (error) {
-    console.error('Logout failed', error);
+    clearTimeout(timeout);
+    router.push({ name: 'Login' });
   }
 };
 

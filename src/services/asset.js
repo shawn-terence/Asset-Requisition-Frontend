@@ -9,16 +9,15 @@ export const assetService={
         try {
             const token=localStorage.getItem('token')
             const response = await axios.post(
-                "https://asset-requisition-backend.onrender.com/assets/add", // Base URL + endpoint
+                `${API_BASE_URL}/assets/add`, 
                 formData,
                 {
                     headers: {
-                        "Content-Type": "multipart/form-data", // Required for file uploads
-                        Authorization: `Token ${token}`, // Include the token in the Authorization header
+                        "Content-Type": "multipart/form-data", 
+                        Authorization: `Token ${token}`, 
                     },
                 }
             );
-            console.log(response.data);
             return response.data;
         } catch (error) {
             if (axios.isAxiosError(error)) {
@@ -86,16 +85,15 @@ export const assetService={
             try {
                 const token = localStorage.getItem('token');
                 const response = await axios.patch(
-                    `https://asset-requisition-backend.onrender.com/assets/${id}/update/`, // Base URL + dynamic asset ID
+                    `${API_BASE_URL}/assets/${id}/update/`, 
                     formData,
                     {
                         headers: {
-                            "Content-Type": "multipart/form-data", // Required for file uploads
-                            Authorization: `Token ${token}`, // Include the token in the Authorization header
+                            "Content-Type": "multipart/form-data", 
+                            Authorization: `Token ${token}`, 
                         },
                     }
                 );
-                console.log(response.data);
                 return response.data;
             } catch (error) {
                 if (axios.isAxiosError(error)) {

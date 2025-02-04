@@ -147,7 +147,7 @@
     { title: "Department", key: "department" },
     { title: "Role", key: "role" },
     { title: "Date Joined", key: "created_at" },
-    { title: "More Details", key: "more_details" }, // New column for the icon
+    { title: "More Details", key: "more_details" }, 
   ];
   
   onMounted(async () => {
@@ -164,7 +164,6 @@
   
   const registerUser = async () => {
     try {
-      console.log({...newUser.value});
       await userService.userRegister({...newUser.value});
       showDialog.value = false;
       await fetchUsers();
@@ -175,7 +174,7 @@
   };
   
   const goToUserDetails = (userId) => {
-    router.push({ name: "UsersDetails", params: { id: userId } }); // Navigate to user details page
+    router.push({ name: "UsersDetails", params: { id: userId } }); 
   };
   
   const formatDate = (dateString) => {

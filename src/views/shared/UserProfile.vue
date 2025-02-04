@@ -206,7 +206,6 @@ const fetchUserProfile = async () => {
 const previewImage = (event) => {
   const file = event.target.files[0]; // Get the first file
   if (file) {
-    console.log("Selected file:", file); // Debugging log
     profilePicture.value = file;
     const reader = new FileReader();
     reader.onload = (e) => {
@@ -229,7 +228,6 @@ const updateProfile = async () => {
       formDataObj.append('profile_picture', profilePicture.value);
     }
     const updatedUser = await userService.updateProfile(formDataObj);
-    console.log(updatedUser)
     userData.value = {
       ...userData.value,
       first_name: updatedUser.first_name,

@@ -1,9 +1,9 @@
 import axios from "axios";
 
-// Base API URL
+
 export const API_BASE_URL = "https://asset-requisition-backend.onrender.com/";
 
-// Create Axios instance
+
 export const axiosInstance = axios.create({
   baseURL: API_BASE_URL,
   headers: {
@@ -11,7 +11,7 @@ export const axiosInstance = axios.create({
   },
 });
 
-// Add an Axios interceptor to attach the token dynamically
+
 axiosInstance.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem("token");
@@ -23,9 +23,9 @@ axiosInstance.interceptors.request.use(
   (error) => Promise.reject(error)
 );
 
-// User Service
+
 export const userService = {
-  // User Registration
+
   userRegister: async (user) => {
     try {
       const response = await axiosInstance.post("/user/register", user);
@@ -35,28 +35,27 @@ export const userService = {
     }
   },
 
-  // User Login (bypassing axiosInstance)
+
   userLogin: async (data) => {
     try {
       const response = await axios.post(`${API_BASE_URL}user/login`, data, {
         headers: { "Content-Type": "application/json" },
       });
   
-      // Extract data from the response
       const token = response.data.token;
-      const user = response.data.user; // Access the nested user object
-      const role = user?.role; // Use optional chaining to safely access role
-      const identity = user?.id; // Use optional chaining to safely access id
+      const user = response.data.user; 
+      const role = user?.role; 
+      const identity = user?.id; 
   
-      // Save data to localStorage if it exists
+
       if (token) {
-        localStorage.setItem("token", token); // Save token
+        localStorage.setItem("token", token); 
       }
       if (role) {
-        localStorage.setItem("userRole", role); // Save role
+        localStorage.setItem("userRole", role);
       }
       if (identity) {
-        localStorage.setItem("userId", identity); // Save user ID
+        localStorage.setItem("userId", identity); 
       }
   
       return response.data;
@@ -64,12 +63,12 @@ export const userService = {
       handleError(error, "Login failed");
     }
   },
-  updateProfile: async (profileData) => {  // ← Accept profileData parameter
+  updateProfile: async (profileData) => { 
     try {
       const token = localStorage.getItem("token");
       const response = await axios.patch(
         `${API_BASE_URL}user/profile/`,
-        profileData,  // ← Use the passed-in data instead of empty FormData
+        profileData,  
         {
           headers: {
             "Content-Type": "multipart/form-data",
@@ -82,7 +81,7 @@ export const userService = {
       handleError(error, "Failed to update profile");
     }
   },
-  // Fetch All Users
+
   allUsers: async () => {
     try {
       const response = await axiosInstance.get("/user/all/");

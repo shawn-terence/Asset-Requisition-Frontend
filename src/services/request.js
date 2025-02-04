@@ -1,8 +1,7 @@
 import axios from "axios";
-import { axiosInstance } from "./user"; // Assuming axiosInstance is configured with base URL and headers
+import { axiosInstance } from "./user"; 
 
 export const requestsService = {
-    // Existing functions
     getRequests: async () => {
         try {
             const response = await axiosInstance.get('requests');
